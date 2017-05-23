@@ -23,15 +23,11 @@ class Class:
         loadFile.close()
 
 def distanceEuklid(fp1,fp2):
-    dims=0
-
     dist=0
 
     for key in fp1.keys()|fp2.keys():
         dist+=math.pow(fp1.get(key,0)-fp2.get(key,0),2)
-        dims+=1.
-    print("Dist:",dist,"dims:",dims)
-    return math.pow(dist,1/dims)
+    return math.sqrt(dist)
 
 class KNearestNeighbourClassifier:
     def __init__(self,classes,k=1):
